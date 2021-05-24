@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/transaction"
-        android:name="com.example.passbook.ui.transaction.HomeFragment"
+        android:name="com.example.passbook.ui.transaction.TransactionFragment"
         android:label="@string/addTransaction"
         tools:layout="@layout/fragment_transaction" />
 
     <fragment
         android:id="@+id/passbook"
-        android:name="com.example.passbook.ui.passbook.DashboardFragment"
+        android:name="com.example.passbook.ui.passbook.PassbookFragment"
         android:label="@string/passbook"
         tools:layout="@layout/fragment_passbook" />
 
