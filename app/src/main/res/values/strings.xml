@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Passbook</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="addTransaction">Add transaction</string>
+    <string name="passbook">Passbook</string>
 </resources>
