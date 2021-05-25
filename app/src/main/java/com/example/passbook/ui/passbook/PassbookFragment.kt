@@ -20,7 +20,7 @@ class PassbookFragment : Fragment() {
 
     data class TransactionInstance(val amount: Double)
 
-    private val transactionList = listOf(
+    private val transactionList = mutableListOf<TransactionInstance>(
         TransactionInstance(12.5),
         TransactionInstance(22.5),
         TransactionInstance(32.5),
