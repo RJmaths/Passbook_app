@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.example.passbook.databinding.FragmentTransactionBinding
 import com.example.passbook.ui.TransactionListClass
 import com.example.passbook.ui.passbook.PassbookFragment
+import com.google.android.material.snackbar.Snackbar
 
 class TransactionFragment : Fragment(){
 
@@ -31,9 +32,18 @@ class TransactionFragment : Fragment(){
         val view = binding.root
         val button: Button = binding.submitTransaction
         button.setOnClickListener {
-            TransactionListClass.addTransaction(
-                PassbookFragment.TransactionInstance(binding.transactionAmount.text.toString().toDouble())
-            )
+            if (binding.transactionAmount.text.isNotEmpty()){
+                TransactionListClass.addTransaction(
+                    PassbookFragment.TransactionInstance(binding.transactionAmount.text.toString().toDouble())
+                )
+                binding.transactionAmount.setText("")
+                val snack = Snackbar.make(it,"Transaction Added Successfully",Snackbar.LENGTH_LONG)
+                snack.show()
+            }
+            else{
+                val snack = Snackbar.make(it,"Please enter an amount for transaction",Snackbar.LENGTH_SHORT)
+                snack.show()
+            }
         }
 
         return view
