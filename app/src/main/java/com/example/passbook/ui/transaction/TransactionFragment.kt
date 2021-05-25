@@ -12,6 +12,8 @@ import com.example.passbook.databinding.FragmentTransactionBinding
 import com.example.passbook.ui.TransactionListClass
 import com.example.passbook.ui.passbook.PassbookFragment
 import com.google.android.material.snackbar.Snackbar
+import java.text.SimpleDateFormat
+import java.util.*
 
 class TransactionFragment : Fragment(){
 
@@ -33,8 +35,20 @@ class TransactionFragment : Fragment(){
         val button: Button = binding.submitTransaction
         button.setOnClickListener {
             if (binding.transactionAmount.text.isNotEmpty()){
+                val withdrawalOrDeposit: String =
+                    if (binding.transactionTypeRadioGroup.checkedRadioButtonId == binding.deposit.id){
+                    "Deposit"
+                    } else{
+                    "Withdrawal"
+                    }
+                val sdf = SimpleDateFormat("dd/M/yyyy hh:mm:ss")
+                val currentDateAndTime = sdf.format(Date())
                 TransactionListClass.addTransaction(
-                    PassbookFragment.TransactionInstance(binding.transactionAmount.text.toString().toDouble())
+                    PassbookFragment.TransactionInstance(
+                        binding.transactionAmount.text.toString().toDouble(),
+                        withdrawalOrDeposit,
+                        currentDateAndTime
+                    )
                 )
                 binding.transactionAmount.setText("")
                 val snack = Snackbar.make(it,"Transaction Added Successfully",Snackbar.LENGTH_LONG)

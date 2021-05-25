@@ -29,7 +29,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/DepositWithdrawID"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:text="TextView"
@@ -38,7 +38,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/TimeID"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:text="TextView"

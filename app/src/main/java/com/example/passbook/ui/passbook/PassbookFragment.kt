@@ -19,17 +19,9 @@ class PassbookFragment : Fragment() {
     private var _binding: FragmentPassbookBinding? = null
 
 
-    data class TransactionInstance(val amount: Double)
-
-//    private val transactionList = mutableListOf<TransactionInstance>(
-//        TransactionInstance(12.5),
-//        TransactionInstance(22.5),
-//        TransactionInstance(32.5),
-//        TransactionInstance(45.5),
-//        TransactionInstance(52.5),
-//        TransactionInstance(62.5),
-//        TransactionInstance(72.5),
-//    )
+    data class TransactionInstance(val amount: Double,
+                                   val depositWithdrawal: String,
+                                   val dateAndTime: String)
 
     private val transactionList = TransactionListClass.getTransactionList()
 
