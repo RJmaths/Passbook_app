@@ -1,30 +1,25 @@
 package com.example.passbook.ui.passbook
 
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListAdapter
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.versionedparcelable.ParcelField
-import androidx.versionedparcelable.VersionedParcelize
 import com.example.passbook.databinding.FragmentPassbookBinding
 import com.example.passbook.ui.TransactionListClass
 
 class PassbookFragment : Fragment() {
 
-    private lateinit var passbookViewModel: PassbookViewModel
     private var _binding: FragmentPassbookBinding? = null
 
-
+    //initialize the dataclass that represents a single transaction input
     data class TransactionInstance(val amount: Double,
                                    val depositWithdrawal: String,
                                    val dateAndTime: String)
 
+    //retrieves list of transactions from TransactionListClass
     private val transactionList = TransactionListClass.getTransactionList()
-
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -34,10 +29,9 @@ class PassbookFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPassbookBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,11 +45,6 @@ class PassbookFragment : Fragment() {
             adapter = ListAdapter(transactionList)
         }
         binding.totalAmountDisplayID.text = "Total balance\nRs ${TransactionListClass.getTotalBalance()}"
-    }
-
-    //Remove this and check if it works
-    companion object {
-        fun newInstance(): PassbookFragment = PassbookFragment()
     }
 
     override fun onDestroyView() {

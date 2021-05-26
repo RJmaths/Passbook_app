@@ -1,6 +1,5 @@
 package com.example.passbook.ui.passbook
 
-import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
