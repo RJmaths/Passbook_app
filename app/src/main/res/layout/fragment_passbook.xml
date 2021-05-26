@@ -11,13 +11,18 @@
         android:id="@+id/passbookID"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:background="#CBEFFF" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/totalAmountDisplayID"
         android:layout_width="match_parent"
         android:layout_height="128dp"
         android:layout_weight="0"
-        android:text="TextView" />
+        android:background="#FFF59B"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000000"
+        android:textSize="24sp" />
 
 </LinearLayout>

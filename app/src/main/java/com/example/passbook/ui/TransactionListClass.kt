@@ -13,4 +13,14 @@ object TransactionListClass {
     fun getTransactionList(): MutableList<TransactionInstance>{
         return listTransaction
     }
+    fun getTotalBalance(): Double{
+        if (listTransaction.isNullOrEmpty()){
+            return 0.00
+        }
+        val withdrawList = listTransaction.filter { it.depositWithdrawal == "Withdrawal"}
+        val depositList = listTransaction.filter { it.depositWithdrawal == "Deposit"}
+        val withdrawAmountList = withdrawList.map { it.amount }
+        val depositAmountList = depositList.map { it.amount }
+        return ((depositAmountList.sum() - withdrawAmountList.sum())*100).toInt()/100.0
+    }
 }

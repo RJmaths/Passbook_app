@@ -2,6 +2,7 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardContainerID"
     android:layout_width="match_parent"
     android:layout_height="128dp"
     android:layout_marginLeft="8dp"
@@ -23,8 +24,8 @@
             android:id="@+id/AmountDisplayID"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="TextView"
             android:gravity="center"
+            android:text="TextView"
             android:textColor="#220060"
             android:textSize="16sp" />
 
@@ -32,8 +33,8 @@
             android:id="@+id/DepositWithdrawID"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="TextView"
             android:gravity="center"
+            android:text="TextView"
             android:textColor="#220060"
             android:textSize="16sp" />
 
@@ -41,8 +42,8 @@
             android:id="@+id/TimeID"
             android:layout_width="match_parent"
             android:layout_height="32dp"
-            android:text="TextView"
             android:gravity="center"
+            android:text="TextView"
             android:textColor="#220060"
             android:textSize="16sp" />
     </LinearLayout>

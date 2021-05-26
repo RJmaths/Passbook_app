@@ -35,6 +35,7 @@ class TransactionFragment : Fragment(){
         val button: Button = binding.submitTransaction
         button.setOnClickListener {
             if (binding.transactionAmount.text.isNotEmpty()){
+                val amount = (binding.transactionAmount.text.toString().toDouble()*100).toInt()/100.0
                 val withdrawalOrDeposit: String =
                     if (binding.transactionTypeRadioGroup.checkedRadioButtonId == binding.deposit.id){
                     "Deposit"
@@ -45,7 +46,7 @@ class TransactionFragment : Fragment(){
                 val currentDateAndTime = sdf.format(Date())
                 TransactionListClass.addTransaction(
                     PassbookFragment.TransactionInstance(
-                        binding.transactionAmount.text.toString().toDouble(),
+                        amount,
                         withdrawalOrDeposit,
                         currentDateAndTime
                     )

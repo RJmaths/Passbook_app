@@ -50,6 +50,7 @@ class PassbookFragment : Fragment() {
             // set the custom adapter to the RecyclerView
             adapter = ListAdapter(transactionList)
         }
+        binding.totalAmountDisplayID.text = "Total balance\nRs ${TransactionListClass.getTotalBalance()}"
     }
 
     //Remove this and check if it works
